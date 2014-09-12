@@ -1,0 +1,32 @@
+@model ScrumAdmin.Models.TAREA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TAREA</legend>
+
+    <div class="display-label">IDUSERSTORY</div>
+    <div class="display-field">@Model.IDUSERSTORY</div>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">ESFUERZO_INVERTIDO</div>
+    <div class="display-field">@Model.ESFUERZO_INVERTIDO</div>
+
+    <div class="display-label">USER_STORY</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USER_STORY).ToString()</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

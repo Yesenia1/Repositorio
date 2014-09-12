@@ -1,0 +1,35 @@
+@model ScrumAdmin.Models.RELEASE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>RELEASE</legend>
+
+    <div class="display-label">IDPROYECTO</div>
+    <div class="display-field">@Model.IDPROYECTO</div>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">FECHA_ENTREGA</div>
+    <div class="display-field">@String.Format("{0:g}", Model.FECHA_ENTREGA)</div>
+
+    <div class="display-label">PROYECTO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.PROYECTO).ToString()</div>
+
+    <div class="display-label">SPRINT</div>
+    <div class="display-field">@(Model.SPRINT == null ? "None" : Model.SPRINT.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

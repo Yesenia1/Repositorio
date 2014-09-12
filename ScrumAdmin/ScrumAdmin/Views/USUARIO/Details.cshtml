@@ -1,0 +1,38 @@
+@model ScrumAdmin.Models.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>USUARIO</legend>
+
+    <div class="display-label">AP1</div>
+    <div class="display-field">@Model.AP1</div>
+
+    <div class="display-label">AP2</div>
+    <div class="display-field">@Model.AP2</div>
+
+    <div class="display-label">EMAIL</div>
+    <div class="display-field">@Model.EMAIL</div>
+
+    <div class="display-label">CELULAR</div>
+    <div class="display-field">@Model.CELULAR</div>
+
+    <div class="display-label">NICK</div>
+    <div class="display-field">@Model.NICK</div>
+
+    <div class="display-label">CONTRASENNIA</div>
+    <div class="display-field">@Model.CONTRASENNIA</div>
+
+    <div class="display-label">EQUIPO</div>
+    <div class="display-field">@(Model.EQUIPO == null ? "None" : Model.EQUIPO.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

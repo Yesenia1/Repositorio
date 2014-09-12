@@ -1,0 +1,28 @@
+@model ScrumAdmin.Models.TAREA
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IDUSERSTORY)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.IDUSERSTORY)
+    @Html.ValidationMessageFor(model => model.IDUSERSTORY)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.NOMBRE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NOMBRE)
+    @Html.ValidationMessageFor(model => model.NOMBRE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ESFUERZO_INVERTIDO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ESFUERZO_INVERTIDO)
+    @Html.ValidationMessageFor(model => model.ESFUERZO_INVERTIDO)
+</div>
+

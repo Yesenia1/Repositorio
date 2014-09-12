@@ -1,0 +1,41 @@
+@model ScrumAdmin.Models.EQUIPO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>EQUIPO</legend>
+
+    <div class="display-label">IDUSUARIO</div>
+    <div class="display-field">@Model.IDUSUARIO</div>
+
+    <div class="display-label">IDROL</div>
+    <div class="display-field">@Model.IDROL</div>
+
+    <div class="display-label">IDPROYECTO</div>
+    <div class="display-field">@Model.IDPROYECTO</div>
+
+    <div class="display-label">PROYECTO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.PROYECTO).ToString()</div>
+
+    <div class="display-label">ROL</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.ROL).ToString()</div>
+
+    <div class="display-label">USUARIO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USUARIO).ToString()</div>
+
+    <div class="display-label">USER_STORY</div>
+    <div class="display-field">@(Model.USER_STORY == null ? "None" : Model.USER_STORY.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

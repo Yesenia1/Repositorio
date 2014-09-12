@@ -1,0 +1,53 @@
+@model IEnumerable<ScrumAdmin.Models.TAREA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            IDUSERSTORY
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            ESFUERZO_INVERTIDO
+        </th>
+        <th>
+            USER_STORY
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.IDUSERSTORY
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@item.ESFUERZO_INVERTIDO
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.USER_STORY).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

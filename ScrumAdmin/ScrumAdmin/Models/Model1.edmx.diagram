@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c5a05ce61034438a5e6d6149910a0fa" Name="Diagrama1">
+        <EntityTypeShape EntityType="Model.CRITERIOS_ACEPTACION" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EQUIPO" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTRATEGIA" Width="1.5" PointX="3.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.INTERES" Width="1.5" PointX="3.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PLAN_ACCION" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PODER" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRIORIDAD" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROYECTO" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PUNTOS_ESTIMACION" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RELEASE" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RIESGO" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ROL" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SPRINT" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SPRINT_RETROSPECTIVE" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SPRINT_REVIEW" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.STAKEHOLDER" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAREA" Width="1.5" PointX="12.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPO" Width="1.5" PointX="8.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_STORY" Width="1.5" PointX="10.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_CRITERIO_PROY_CRIT_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EQUIPO_PROY_EQ_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EQUIPO_ROL_EQ_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EQUIPO_USER_EQ_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_USERSTORY_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_ESTADO_US_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RIESGO_RIESGO_ES_ESTRATEG" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STAKEHOL_INTERES_S_INTERES" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PLAN_ACC_RIESGO_PL_RIESGO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STAKEHOL_RELATIONS_PODER" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_PRIOR_USE_PRIORIDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RELEASE_PROY_RELE_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RIESGO_PROY_RIES_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STAKEHOL_PROY_STAK_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_PUNTOS_US_PUNTOS_E" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SPRINT_SPRINT_RE_RELEASE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SPRINT_R_RELATIONS_SPRINT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SPRINT_R_SPRINT_SP_SPRINT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_SPRINT_US_SPRINT" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TAREA_TAREA_USE_USER_STO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USER_STO_TIPO_USER_TIPO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

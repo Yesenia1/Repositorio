@@ -1,0 +1,41 @@
+@model ScrumAdmin.Models.PROYECTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PROYECTO</legend>
+
+    <div class="display-label">NUM_SPRINTS</div>
+    <div class="display-field">@Model.NUM_SPRINTS</div>
+
+    <div class="display-label">NUM_RELEASES</div>
+    <div class="display-field">@Model.NUM_RELEASES</div>
+
+    <div class="display-label">DESCRIPCION</div>
+    <div class="display-field">@Model.DESCRIPCION</div>
+
+    <div class="display-label">CRITERIOS_ACEPTACION</div>
+    <div class="display-field">@(Model.CRITERIOS_ACEPTACION == null ? "None" : Model.CRITERIOS_ACEPTACION.Count.ToString())</div>
+
+    <div class="display-label">EQUIPO</div>
+    <div class="display-field">@(Model.EQUIPO == null ? "None" : Model.EQUIPO.Count.ToString())</div>
+
+    <div class="display-label">RELEASE</div>
+    <div class="display-field">@(Model.RELEASE == null ? "None" : Model.RELEASE.Count.ToString())</div>
+
+    <div class="display-label">RIESGO</div>
+    <div class="display-field">@(Model.RIESGO == null ? "None" : Model.RIESGO.Count.ToString())</div>
+
+    <div class="display-label">STAKEHOLDER</div>
+    <div class="display-field">@(Model.STAKEHOLDER == null ? "None" : Model.STAKEHOLDER.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

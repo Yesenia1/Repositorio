@@ -1,0 +1,29 @@
+@model ScrumAdmin.Models.TAREA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TAREA</legend>
+
+    <div class="display-label">IDUSERSTORY</div>
+    <div class="display-field">@Model.IDUSERSTORY</div>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">ESFUERZO_INVERTIDO</div>
+    <div class="display-field">@Model.ESFUERZO_INVERTIDO</div>
+
+    <div class="display-label">USER_STORY</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.USER_STORY).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

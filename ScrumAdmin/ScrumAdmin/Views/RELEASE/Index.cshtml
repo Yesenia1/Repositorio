@@ -1,0 +1,59 @@
+@model IEnumerable<ScrumAdmin.Models.RELEASE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            IDPROYECTO
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            FECHA_ENTREGA
+        </th>
+        <th>
+            PROYECTO
+        </th>
+        <th>
+            SPRINT
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.IDPROYECTO
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@String.Format("{0:g}", item.FECHA_ENTREGA)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PROYECTO).ToString()
+        </td>
+        <td>
+			@(item.SPRINT == null ? "None" : item.SPRINT.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

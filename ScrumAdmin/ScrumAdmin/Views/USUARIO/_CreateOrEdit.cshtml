@@ -1,0 +1,52 @@
+@model ScrumAdmin.Models.USUARIO
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.AP1)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.AP1)
+    @Html.ValidationMessageFor(model => model.AP1)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.AP2)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.AP2)
+    @Html.ValidationMessageFor(model => model.AP2)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.EMAIL)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.EMAIL)
+    @Html.ValidationMessageFor(model => model.EMAIL)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CELULAR)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CELULAR)
+    @Html.ValidationMessageFor(model => model.CELULAR)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.NICK)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NICK)
+    @Html.ValidationMessageFor(model => model.NICK)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CONTRASENNIA)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CONTRASENNIA)
+    @Html.ValidationMessageFor(model => model.CONTRASENNIA)
+</div>
+

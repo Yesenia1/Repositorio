@@ -1,0 +1,131 @@
+@model IEnumerable<ScrumAdmin.Models.USER_STORY>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            IDPUNTOSESTIM
+        </th>
+        <th>
+            IDPRIORIDAD
+        </th>
+        <th>
+            IDSPRINT
+        </th>
+        <th>
+            IDESTADO
+        </th>
+        <th>
+            IDTIPO
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            DURACION_PLANEADA
+        </th>
+        <th>
+            TIEMPO_GASTADO
+        </th>
+        <th>
+            TIEMPO_RESTANTE
+        </th>
+        <th>
+            PROPIETARIO
+        </th>
+        <th>
+            EQUIPO
+        </th>
+        <th>
+            ESTADO
+        </th>
+        <th>
+            PRIORIDAD
+        </th>
+        <th>
+            PUNTOS_ESTIMACION
+        </th>
+        <th>
+            SPRINT
+        </th>
+        <th>
+            TAREA
+        </th>
+        <th>
+            TIPO
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.IDPUNTOSESTIM
+        </td>
+        <td>
+			@item.IDPRIORIDAD
+        </td>
+        <td>
+			@item.IDSPRINT
+        </td>
+        <td>
+			@item.IDESTADO
+        </td>
+        <td>
+			@item.IDTIPO
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@item.DURACION_PLANEADA
+        </td>
+        <td>
+			@item.TIEMPO_GASTADO
+        </td>
+        <td>
+			@item.TIEMPO_RESTANTE
+        </td>
+        <td>
+			@item.PROPIETARIO
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.EQUIPO).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.ESTADO).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PRIORIDAD).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PUNTOS_ESTIMACION).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.SPRINT).ToString()
+        </td>
+        <td>
+			@(item.TAREA == null ? "None" : item.TAREA.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.TIPO).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+
