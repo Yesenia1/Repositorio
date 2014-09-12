@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="CRITERIOS_ACEPTACION" EntityType="Model.Store.CRITERIOS_ACEPTACION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQUIPO" EntityType="Model.Store.EQUIPO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ESTADO" EntityType="Model.Store.ESTADO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ESTRATEGIA" EntityType="Model.Store.ESTRATEGIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="INTERES" EntityType="Model.Store.INTERES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PLAN_ACCION" EntityType="Model.Store.PLAN_ACCION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PODER" EntityType="Model.Store.PODER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PRIORIDAD" EntityType="Model.Store.PRIORIDAD" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PROYECTO" EntityType="Model.Store.PROYECTO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PUNTOS_ESTIMACION" EntityType="Model.Store.PUNTOS_ESTIMACION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RELEASE" EntityType="Model.Store.RELEASE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RIESGO" EntityType="Model.Store.RIESGO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ROL" EntityType="Model.Store.ROL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SPRINT" EntityType="Model.Store.SPRINT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SPRINT_RETROSPECTIVE" EntityType="Model.Store.SPRINT_RETROSPECTIVE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SPRINT_REVIEW" EntityType="Model.Store.SPRINT_REVIEW" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="STAKEHOLDER" EntityType="Model.Store.STAKEHOLDER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TAREA" EntityType="Model.Store.TAREA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TIPO" EntityType="Model.Store.TIPO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USER_STORY" EntityType="Model.Store.USER_STORY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USUARIO" EntityType="Model.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CRITERIO_PROY_CRIT_PROYECTO" Association="Model.Store.FK_CRITERIO_PROY_CRIT_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="CRITERIOS_ACEPTACION" EntitySet="CRITERIOS_ACEPTACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_PROY_EQ_PROYECTO" Association="Model.Store.FK_EQUIPO_PROY_EQ_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_ROL_EQ_ROL" Association="Model.Store.FK_EQUIPO_ROL_EQ_ROL">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_USER_EQ_USUARIO" Association="Model.Store.FK_EQUIPO_USER_EQ_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLAN_ACC_RIESGO_PL_RIESGO" Association="Model.Store.FK_PLAN_ACC_RIESGO_PL_RIESGO">
+      <End Role="RIESGO" EntitySet="RIESGO" />
+      <End Role="PLAN_ACCION" EntitySet="PLAN_ACCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RELEASE_PROY_RELE_PROYECTO" Association="Model.Store.FK_RELEASE_PROY_RELE_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="RELEASE" EntitySet="RELEASE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIESGO_PROY_RIES_PROYECTO" Association="Model.Store.FK_RIESGO_PROY_RIES_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="RIESGO" EntitySet="RIESGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIESGO_RIESGO_ES_ESTRATEG" Association="Model.Store.FK_RIESGO_RIESGO_ES_ESTRATEG">
+      <End Role="ESTRATEGIA" EntitySet="ESTRATEGIA" />
+      <End Role="RIESGO" EntitySet="RIESGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_R_RELATIONS_SPRINT" Association="Model.Store.FK_SPRINT_R_RELATIONS_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="SPRINT_RETROSPECTIVE" EntitySet="SPRINT_RETROSPECTIVE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_R_SPRINT_SP_SPRINT" Association="Model.Store.FK_SPRINT_R_SPRINT_SP_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="SPRINT_REVIEW" EntitySet="SPRINT_REVIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_SPRINT_RE_RELEASE" Association="Model.Store.FK_SPRINT_SPRINT_RE_RELEASE">
+      <End Role="RELEASE" EntitySet="RELEASE" />
+      <End Role="SPRINT" EntitySet="SPRINT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_INTERES_S_INTERES" Association="Model.Store.FK_STAKEHOL_INTERES_S_INTERES">
+      <End Role="INTERES" EntitySet="INTERES" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_PROY_STAK_PROYECTO" Association="Model.Store.FK_STAKEHOL_PROY_STAK_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_RELATIONS_PODER" Association="Model.Store.FK_STAKEHOL_RELATIONS_PODER">
+      <End Role="PODER" EntitySet="PODER" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAREA_TAREA_USE_USER_STO" Association="Model.Store.FK_TAREA_TAREA_USE_USER_STO">
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+      <End Role="TAREA" EntitySet="TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_ESTADO_US_ESTADO" Association="Model.Store.FK_USER_STO_ESTADO_US_ESTADO">
+      <End Role="ESTADO" EntitySet="ESTADO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_PRIOR_USE_PRIORIDA" Association="Model.Store.FK_USER_STO_PRIOR_USE_PRIORIDA">
+      <End Role="PRIORIDAD" EntitySet="PRIORIDAD" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_PUNTOS_US_PUNTOS_E" Association="Model.Store.FK_USER_STO_PUNTOS_US_PUNTOS_E">
+      <End Role="PUNTOS_ESTIMACION" EntitySet="PUNTOS_ESTIMACION" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_SPRINT_US_SPRINT" Association="Model.Store.FK_USER_STO_SPRINT_US_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_TIPO_USER_TIPO" Association="Model.Store.FK_USER_STO_TIPO_USER_TIPO">
+      <End Role="TIPO" EntitySet="TIPO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_USERSTORY_EQUIPO" Association="Model.Store.FK_USER_STO_USERSTORY_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CRITERIOS_ACEPTACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="int" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EQUIPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDUSUARIO" Type="int" />
+    <Property Name="IDROL" Type="int" />
+    <Property Name="IDPROYECTO" Type="int" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ESTRATEGIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="INTERES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PLAN_ACCION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDRIESGO" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PODER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PRIORIDAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PROYECTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NUM_SPRINTS" Type="int" />
+    <Property Name="NUM_RELEASES" Type="int" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PUNTOS_ESTIMACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="PUNTO" Type="int" />
+  </EntityType>
+  <EntityType Name="RELEASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="FECHA_ENTREGA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RIESGO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="int" />
+    <Property Name="IDESTRATEGIA" Type="int" />
+    <Property Name="DESCRIPCION_CORTA" Type="varchar" MaxLength="200" />
+    <Property Name="DESC_DETALLADA" Type="varchar" MaxLength="300" />
+    <Property Name="PROBABILIDAD" Type="int" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SPRINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDRELEASE" Type="int" />
+    <Property Name="FECHA_INICIO" Type="datetime" />
+    <Property Name="FECHA_FINAL" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SPRINT_RETROSPECTIVE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDSPRINT" Type="int" />
+    <Property Name="COMENTARIO" Type="varchar" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="SPRINT_REVIEW">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDSPRINT" Type="int" />
+    <Property Name="COMENTARIO" Type="varchar" MaxLength="1024" />
+    <Property Name="FECHA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="STAKEHOLDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDPODER" Type="int" />
+    <Property Name="IDINTERES" Type="int" />
+    <Property Name="IDPROYECTO" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="AP1" Type="varchar" MaxLength="20" />
+    <Property Name="AP2" Type="varchar" MaxLength="20" />
+    <Property Name="CELULAR" Type="varchar" MaxLength="20" />
+    <Property Name="EMPRESA" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="50" />
+    <Property Name="EXPECTATIVA" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TAREA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDUSERSTORY" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="ESFUERZO_INVERTIDO" Type="int" />
+  </EntityType>
+  <EntityType Name="TIPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="USER_STORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDPUNTOSESTIM" Type="int" />
+    <Property Name="IDPRIORIDAD" Type="int" />
+    <Property Name="IDSPRINT" Type="int" />
+    <Property Name="IDESTADO" Type="int" />
+    <Property Name="IDTIPO" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" />
+    <Property Name="DURACION_PLANEADA" Type="int" />
+    <Property Name="TIEMPO_GASTADO" Type="int" />
+    <Property Name="TIEMPO_RESTANTE" Type="int" />
+    <Property Name="PROPIETARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AP1" Type="varchar" MaxLength="20" />
+    <Property Name="AP2" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="CELULAR" Type="varchar" MaxLength="20" />
+    <Property Name="NICK" Type="varchar" MaxLength="20" />
+    <Property Name="CONTRASENNIA" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_CRITERIO_PROY_CRIT_PROYECTO">
+    <End Role="PROYECTO" Type="Model.Store.PROYECTO" Multiplicity="0..1" />
+    <End Role="CRITERIOS_ACEPTACION" Type="Model.Store.CRITERIOS_ACEPTACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRITERIOS_ACEPTACION">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_PROY_EQ_PROYECTO">
+    <End Role="PROYECTO" Type="Model.Store.PROYECTO" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.Store.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_ROL_EQ_ROL">
+    <End Role="ROL" Type="Model.Store.ROL" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.Store.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_USER_EQ_USUARIO">
+    <End Role="USUARIO" Type="Model.Store.USUARIO" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.Store.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLAN_ACC_RIESGO_PL_RIESGO">
+    <End Role="RIESGO" Type="Model.Store.RIESGO" Multiplicity="0..1" />
+    <End Role="PLAN_ACCION" Type="Model.Store.PLAN_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIESGO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PLAN_ACCION">
+        <PropertyRef Name="IDRIESGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RELEASE_PROY_RELE_PROYECTO">
+    <End Role="PROYECTO" Type="Model.Store.PROYECTO" Multiplicity="0..1" />
+    <End Role="RELEASE" Type="Model.Store.RELEASE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELEASE">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIESGO_PROY_RIES_PROYECTO">
+    <End Role="PROYECTO" Type="Model.Store.PROYECTO" Multiplicity="0..1" />
+    <End Role="RIESGO" Type="Model.Store.RIESGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RIESGO">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIESGO_RIESGO_ES_ESTRATEG">
+    <End Role="ESTRATEGIA" Type="Model.Store.ESTRATEGIA" Multiplicity="0..1" />
+    <End Role="RIESGO" Type="Model.Store.RIESGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRATEGIA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RIESGO">
+        <PropertyRef Name="IDESTRATEGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_R_RELATIONS_SPRINT">
+    <End Role="SPRINT" Type="Model.Store.SPRINT" Multiplicity="0..1" />
+    <End Role="SPRINT_RETROSPECTIVE" Type="Model.Store.SPRINT_RETROSPECTIVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT_RETROSPECTIVE">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_R_SPRINT_SP_SPRINT">
+    <End Role="SPRINT" Type="Model.Store.SPRINT" Multiplicity="0..1" />
+    <End Role="SPRINT_REVIEW" Type="Model.Store.SPRINT_REVIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT_REVIEW">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_SPRINT_RE_RELEASE">
+    <End Role="RELEASE" Type="Model.Store.RELEASE" Multiplicity="0..1" />
+    <End Role="SPRINT" Type="Model.Store.SPRINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RELEASE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT">
+        <PropertyRef Name="IDRELEASE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_INTERES_S_INTERES">
+    <End Role="INTERES" Type="Model.Store.INTERES" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.Store.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INTERES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDINTERES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_PROY_STAK_PROYECTO">
+    <End Role="PROYECTO" Type="Model.Store.PROYECTO" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.Store.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_RELATIONS_PODER">
+    <End Role="PODER" Type="Model.Store.PODER" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.Store.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PODER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDPODER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAREA_TAREA_USE_USER_STO">
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="0..1" />
+    <End Role="TAREA" Type="Model.Store.TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_STORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAREA">
+        <PropertyRef Name="IDUSERSTORY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_ESTADO_US_ESTADO">
+    <End Role="ESTADO" Type="Model.Store.ESTADO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_PRIOR_USE_PRIORIDA">
+    <End Role="PRIORIDAD" Type="Model.Store.PRIORIDAD" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRIORIDAD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDPRIORIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_PUNTOS_US_PUNTOS_E">
+    <End Role="PUNTOS_ESTIMACION" Type="Model.Store.PUNTOS_ESTIMACION" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PUNTOS_ESTIMACION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDPUNTOSESTIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_SPRINT_US_SPRINT">
+    <End Role="SPRINT" Type="Model.Store.SPRINT" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_TIPO_USER_TIPO">
+    <End Role="TIPO" Type="Model.Store.TIPO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDTIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_USERSTORY_EQUIPO">
+    <End Role="EQUIPO" Type="Model.Store.EQUIPO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.Store.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="PROPIETARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

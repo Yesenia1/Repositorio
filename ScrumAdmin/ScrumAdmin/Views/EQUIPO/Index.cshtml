@@ -1,67 +1,36 @@
 @model IEnumerable<ScrumAdmin.Models.EQUIPO>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Equipo";
 }
 
-<h2>Index</h2>
+<h2>Equipo</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Miembro", "Create")
 </p>
 <table>
     <tr>
         <th></th>
         <th>
-            IDUSUARIO
+            Usuario
         </th>
         <th>
-            IDROL
-        </th>
-        <th>
-            IDPROYECTO
-        </th>
-        <th>
-            PROYECTO
-        </th>
-        <th>
-            ROL
-        </th>
-        <th>
-            USUARIO
-        </th>
-        <th>
-            USER_STORY
+            Rol
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
         <td>
-			@item.IDUSUARIO
+			@item.USUARIO.AP1 @item.USUARIO.AP2
         </td>
         <td>
-			@item.IDROL
-        </td>
-        <td>
-			@item.IDPROYECTO
-        </td>
-        <td>
-			@Html.DisplayTextFor(_ => item.PROYECTO).ToString()
-        </td>
-        <td>
-			@Html.DisplayTextFor(_ => item.ROL).ToString()
-        </td>
-        <td>
-			@Html.DisplayTextFor(_ => item.USUARIO).ToString()
-        </td>
-        <td>
-			@(item.USER_STORY == null ? "None" : item.USER_STORY.Count.ToString())
+			@item.ROL.NOMBRE
         </td>
     </tr>
 }

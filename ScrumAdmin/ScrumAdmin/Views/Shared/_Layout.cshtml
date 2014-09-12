@@ -13,17 +13,25 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("su logotipo aquí", "Index", "Home")</p>
+                    <p class="site-title">
+                   @Html.ActionLink(
+                        " ", 
+                        "Index", 
+                        "Home", 
+                        null , 
+                        new { 
+                            style = "background: url('" + Url.Content("/images/scrum_logo.png") + "') no-repeat center right; display:block; height:100px; width:200px;" 
+                        }
+                    )</p>
                 </div>
                 <div class="float-right">
-                    <section id="login">
+@*                    <section id="login">
                         @Html.Partial("_LoginPartial")
-                    </section>
+                    </section>*@
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Proyectos", "Index", "PROYECTO")</li>
+                            <li>@Html.ActionLink("Usuarios", "Index", "USUARIO")</li>
                         </ul>
                     </nav>
                 </div>
@@ -38,7 +46,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET MVC</p>
+                    <p>&copy; @DateTime.Now.Year - Magdiell Duarte, Andrea Exarahi, Alonso Jimenez, Yesenia Montiel & Javier Rojas</p>
                 </div>
             </div>
         </footer>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CRITERIOS_ACEPTACION">
+      <EntityTypeMapping TypeName="Model.CRITERIOS_ACEPTACION">
+        <MappingFragment StoreEntitySet="CRITERIOS_ACEPTACION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPROYECTO" ColumnName="IDPROYECTO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO">
+      <EntityTypeMapping TypeName="Model.EQUIPO">
+        <MappingFragment StoreEntitySet="EQUIPO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+          <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+          <ScalarProperty Name="IDPROYECTO" ColumnName="IDPROYECTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTADO">
+      <EntityTypeMapping TypeName="Model.ESTADO">
+        <MappingFragment StoreEntitySet="ESTADO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTRATEGIA">
+      <EntityTypeMapping TypeName="Model.ESTRATEGIA">
+        <MappingFragment StoreEntitySet="ESTRATEGIA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INTERES">
+      <EntityTypeMapping TypeName="Model.INTERES">
+        <MappingFragment StoreEntitySet="INTERES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLAN_ACCION">
+      <EntityTypeMapping TypeName="Model.PLAN_ACCION">
+        <MappingFragment StoreEntitySet="PLAN_ACCION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDRIESGO" ColumnName="IDRIESGO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PODER">
+      <EntityTypeMapping TypeName="Model.PODER">
+        <MappingFragment StoreEntitySet="PODER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRIORIDAD">
+      <EntityTypeMapping TypeName="Model.PRIORIDAD">
+        <MappingFragment StoreEntitySet="PRIORIDAD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROYECTO">
+      <EntityTypeMapping TypeName="Model.PROYECTO">
+        <MappingFragment StoreEntitySet="PROYECTO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NUM_SPRINTS" ColumnName="NUM_SPRINTS" />
+          <ScalarProperty Name="NUM_RELEASES" ColumnName="NUM_RELEASES" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUNTOS_ESTIMACION">
+      <EntityTypeMapping TypeName="Model.PUNTOS_ESTIMACION">
+        <MappingFragment StoreEntitySet="PUNTOS_ESTIMACION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PUNTO" ColumnName="PUNTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RELEASE">
+      <EntityTypeMapping TypeName="Model.RELEASE">
+        <MappingFragment StoreEntitySet="RELEASE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPROYECTO" ColumnName="IDPROYECTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_ENTREGA" ColumnName="FECHA_ENTREGA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RIESGO">
+      <EntityTypeMapping TypeName="Model.RIESGO">
+        <MappingFragment StoreEntitySet="RIESGO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPROYECTO" ColumnName="IDPROYECTO" />
+          <ScalarProperty Name="IDESTRATEGIA" ColumnName="IDESTRATEGIA" />
+          <ScalarProperty Name="DESCRIPCION_CORTA" ColumnName="DESCRIPCION_CORTA" />
+          <ScalarProperty Name="DESC_DETALLADA" ColumnName="DESC_DETALLADA" />
+          <ScalarProperty Name="PROBABILIDAD" ColumnName="PROBABILIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROL">
+      <EntityTypeMapping TypeName="Model.ROL">
+        <MappingFragment StoreEntitySet="ROL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPRINT">
+      <EntityTypeMapping TypeName="Model.SPRINT">
+        <MappingFragment StoreEntitySet="SPRINT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDRELEASE" ColumnName="IDRELEASE" />
+          <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+          <ScalarProperty Name="FECHA_FINAL" ColumnName="FECHA_FINAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPRINT_RETROSPECTIVE">
+      <EntityTypeMapping TypeName="Model.SPRINT_RETROSPECTIVE">
+        <MappingFragment StoreEntitySet="SPRINT_RETROSPECTIVE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDSPRINT" ColumnName="IDSPRINT" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPRINT_REVIEW">
+      <EntityTypeMapping TypeName="Model.SPRINT_REVIEW">
+        <MappingFragment StoreEntitySet="SPRINT_REVIEW">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDSPRINT" ColumnName="IDSPRINT" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAKEHOLDER">
+      <EntityTypeMapping TypeName="Model.STAKEHOLDER">
+        <MappingFragment StoreEntitySet="STAKEHOLDER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPODER" ColumnName="IDPODER" />
+          <ScalarProperty Name="IDINTERES" ColumnName="IDINTERES" />
+          <ScalarProperty Name="IDPROYECTO" ColumnName="IDPROYECTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="AP1" ColumnName="AP1" />
+          <ScalarProperty Name="AP2" ColumnName="AP2" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="EXPECTATIVA" ColumnName="EXPECTATIVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAREA">
+      <EntityTypeMapping TypeName="Model.TAREA">
+        <MappingFragment StoreEntitySet="TAREA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDUSERSTORY" ColumnName="IDUSERSTORY" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESFUERZO_INVERTIDO" ColumnName="ESFUERZO_INVERTIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO">
+      <EntityTypeMapping TypeName="Model.TIPO">
+        <MappingFragment StoreEntitySet="TIPO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_STORY">
+      <EntityTypeMapping TypeName="Model.USER_STORY">
+        <MappingFragment StoreEntitySet="USER_STORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPUNTOSESTIM" ColumnName="IDPUNTOSESTIM" />
+          <ScalarProperty Name="IDPRIORIDAD" ColumnName="IDPRIORIDAD" />
+          <ScalarProperty Name="IDSPRINT" ColumnName="IDSPRINT" />
+          <ScalarProperty Name="IDESTADO" ColumnName="IDESTADO" />
+          <ScalarProperty Name="IDTIPO" ColumnName="IDTIPO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DURACION_PLANEADA" ColumnName="DURACION_PLANEADA" />
+          <ScalarProperty Name="TIEMPO_GASTADO" ColumnName="TIEMPO_GASTADO" />
+          <ScalarProperty Name="TIEMPO_RESTANTE" ColumnName="TIEMPO_RESTANTE" />
+          <ScalarProperty Name="PROPIETARIO" ColumnName="PROPIETARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AP1" ColumnName="AP1" />
+          <ScalarProperty Name="AP2" ColumnName="AP2" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="NICK" ColumnName="NICK" />
+          <ScalarProperty Name="CONTRASENNIA" ColumnName="CONTRASENNIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

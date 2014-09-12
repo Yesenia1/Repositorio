@@ -1,10 +1,10 @@
 @model ScrumAdmin.Models.USER_STORY
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Editar Historia de Usuario</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -15,11 +15,11 @@
 		@Html.Partial("_CreateOrEdit", Model)
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Guardar" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index")
 </div>

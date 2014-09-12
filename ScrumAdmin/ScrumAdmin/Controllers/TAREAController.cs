@@ -10,6 +10,7 @@ namespace ScrumAdmin.Controllers
     public class TAREAController : Controller
     {
 		private readonly ITAREARepository tareaRepository;
+        public Entities db = new Entities();
 
 		// If you are using Dependency Injection, you can delete the following constructor
         public TAREAController() : this(new TAREARepository())
@@ -42,6 +43,7 @@ namespace ScrumAdmin.Controllers
 
         public ActionResult Create()
         {
+
             return View();
         } 
 

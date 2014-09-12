@@ -14,12 +14,15 @@ using ScrumAdmin.Models;
 namespace ScrumAdmin.Controllers
 {
     [Authorize]
-    //[InitializeSimpleMembership]
+    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+
+        public Entities db = new Entities();
+        SINGLETON singleton = SINGLETON.Create();
+
         //
         // GET: /Account/Login
-
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -33,16 +36,31 @@ namespace ScrumAdmin.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(USUARIO model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            USUARIO users = (from USUARIO p in db.USUARIO where (p.NICK == model.NICK) select p).FirstOrDefault();
+            if (users != null)
             {
-                return RedirectToLocal(returnUrl);
+                if (users.CONTRASENNIA == model.CONTRASENNIA)
+                {
+                   WebSecurity.Login(model.NICK, model.CONTRASENNIA, persistCookie: false);
+                   singleton.idUsuario = users.ID;
+                   return RedirectToAction("Index", "PROYECTO");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "La contraseña es incorrecta");
+                    return View(model);
+                }
             }
-
+            else
+            {
+                ModelState.AddModelError("", "El usuario no existe");
+                return View(model);
+            }                        
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-            ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
-            return View(model);
+           // ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
+            //return View(model);
         }
 
         //
@@ -79,7 +97,6 @@ namespace ScrumAdmin.Controllers
                 // Intento de registrar al usuario
                 try
                 {
-                    
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
@@ -176,7 +193,7 @@ namespace ScrumAdmin.Controllers
             else
             {
                 // El usuario no dispone de contraseña local, por lo que debe quitar todos los errores de validación generados por un
-                // campo OldPassword vacío
+                // campo OldPassword
                 ModelState state = ModelState["OldPassword"];
                 if (state != null)
                 {
@@ -190,9 +207,9 @@ namespace ScrumAdmin.Controllers
                         WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
                         return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
-                        ModelState.AddModelError("", e);
+                        ModelState.AddModelError("", String.Format("No se puede crear una cuenta local. Es posible que ya exista una cuenta con el nombre \"{0}\".", User.Identity.Name));
                     }
                 }
             }

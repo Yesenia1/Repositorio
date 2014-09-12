@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
     
     public partial class USUARIO
     {
@@ -18,14 +19,29 @@ namespace ScrumAdmin.Models
         {
             this.EQUIPO = new HashSet<EQUIPO>();
         }
-
-        [KEY]
+    
         public int ID { get; set; }
+        
+        [Required]
+        [Display(Name = "Nombre")]
         public string AP1 { get; set; }
+
+        [Display(Name = "Apellido")]
         public string AP2 { get; set; }
+
+        [Required]
+        [Display(Name = "Correo")]
         public string EMAIL { get; set; }
+
+        [Display(Name = "Celular")]
         public string CELULAR { get; set; }
+
+        [Required]
+        [Display(Name = "NickName")]
         public string NICK { get; set; }
+
+        [Required]
+        [Display(Name = "Contraseña")]
         public string CONTRASENNIA { get; set; }
     
         public virtual ICollection<EQUIPO> EQUIPO { get; set; }

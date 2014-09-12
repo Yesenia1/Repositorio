@@ -2,21 +2,6 @@
 
 @* This partial view defines form fields that will appear when creating and editing entities *@
 
-<div class="editor-label">
-    @Html.LabelFor(model => model.NUM_SPRINTS)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.NUM_SPRINTS)
-    @Html.ValidationMessageFor(model => model.NUM_SPRINTS)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.NUM_RELEASES)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.NUM_RELEASES)
-    @Html.ValidationMessageFor(model => model.NUM_RELEASES)
-</div>
 
 <div class="editor-label">
     @Html.LabelFor(model => model.DESCRIPCION)
@@ -24,5 +9,22 @@
 <div class="editor-field">
     @Html.EditorFor(model => model.DESCRIPCION)
     @Html.ValidationMessageFor(model => model.DESCRIPCION)
+</div>
+
+@*<div class="editor-label">
+    @Html.LabelFor(model => model.NUM_SPRINTS)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NUM_SPRINTS)
+    @Html.ValidationMessageFor(model => model.NUM_SPRINTS)
+</div>
+*@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.NUM_RELEASES)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.NUM_RELEASES)
+    @Html.ValidationMessageFor(model => model.NUM_RELEASES)
 </div>
 

@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class EQUIPO
     {
@@ -18,11 +19,18 @@ namespace ScrumAdmin.Models
         {
             this.USER_STORY = new HashSet<USER_STORY>();
         }
-
-        [KEY]
+    
         public int ID { get; set; }
+
+        [Required]
+        [Display(Name = "Usuario")]
         public Nullable<int> IDUSUARIO { get; set; }
+
+        [Required]
+        [Display(Name = "Rol")]
         public Nullable<int> IDROL { get; set; }
+
+        [Display(Name = "Proyecto")]
         public Nullable<int> IDPROYECTO { get; set; }
     
         public virtual PROYECTO PROYECTO { get; set; }

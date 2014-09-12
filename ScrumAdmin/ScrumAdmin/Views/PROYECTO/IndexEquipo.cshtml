@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ScrumAdmin.Models.EQUIPO>
+
+@{
+    ViewBag.Title = "Equipo";
+}
+
+<h2>Equipo</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Miembro", "CreateMiembro")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Rol
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+        </td>
+        <td>
+			@item.USUARIO.AP1 @item.USUARIO.AP2
+        </td>
+        <td>
+			@item.ROL.NOMBRE
+        </td>
+    </tr>
+}
+
+</table>
+
+

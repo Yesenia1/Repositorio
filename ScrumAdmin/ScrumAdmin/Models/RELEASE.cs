@@ -18,8 +18,7 @@ namespace ScrumAdmin.Models
         {
             this.SPRINT = new HashSet<SPRINT>();
         }
-
-        [KEY]
+    
         public int ID { get; set; }
         public Nullable<int> IDPROYECTO { get; set; }
         public string NOMBRE { get; set; }

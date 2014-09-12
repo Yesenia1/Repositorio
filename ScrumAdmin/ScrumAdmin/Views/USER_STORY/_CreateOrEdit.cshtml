@@ -2,83 +2,103 @@
 
 @* This partial view defines form fields that will appear when creating and editing entities *@
 
-<div class="editor-label">
-    @Html.LabelFor(model => model.IDPUNTOSESTIM)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.IDPUNTOSESTIM)
-    @Html.ValidationMessageFor(model => model.IDPUNTOSESTIM)
+
+<div>    
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NOMBRE)        
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NOMBRE)
+            @Html.ValidationMessageFor(model => model.NOMBRE)
+        </div>
+    </div>    
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDPUNTOSESTIM)    
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDPUNTOSESTIM", "Select")
+            @Html.ValidationMessageFor(model => model.IDPUNTOSESTIM)
+        </div>
+    </div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDPRIORIDAD)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDPRIORIDAD", "Select")
+            @Html.ValidationMessageFor(model => model.IDPRIORIDAD)
+        </div>
+    </div>    
 </div>
 
-<div class="editor-label">
-    @Html.LabelFor(model => model.IDPRIORIDAD)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.IDPRIORIDAD)
-    @Html.ValidationMessageFor(model => model.IDPRIORIDAD)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.IDSPRINT)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.IDSPRINT)
-    @Html.ValidationMessageFor(model => model.IDSPRINT)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.IDESTADO)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.IDESTADO)
-    @Html.ValidationMessageFor(model => model.IDESTADO)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.IDTIPO)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.IDTIPO)
-    @Html.ValidationMessageFor(model => model.IDTIPO)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.NOMBRE)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.NOMBRE)
-    @Html.ValidationMessageFor(model => model.NOMBRE)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.DURACION_PLANEADA)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.DURACION_PLANEADA)
-    @Html.ValidationMessageFor(model => model.DURACION_PLANEADA)
+<div>
+@*    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDSPRINT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDSPRINT)
+            @Html.ValidationMessageFor(model => model.IDSPRINT)
+        </div>
+    </div>*@
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDESTADO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDESTADO", "Select")
+            @Html.ValidationMessageFor(model => model.IDESTADO)
+        </div>
+    </div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDTIPO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDTIPO", "Select")
+            @Html.ValidationMessageFor(model => model.IDTIPO)
+        </div>
+    </div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PROPIETARIO)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PROPIETARIO", "Select")
+            @Html.ValidationMessageFor(model => model.PROPIETARIO)
+        </div>
+    </div>
 </div>
 
-<div class="editor-label">
-    @Html.LabelFor(model => model.TIEMPO_GASTADO)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.TIEMPO_GASTADO)
-    @Html.ValidationMessageFor(model => model.TIEMPO_GASTADO)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.TIEMPO_RESTANTE)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.TIEMPO_RESTANTE)
-    @Html.ValidationMessageFor(model => model.TIEMPO_RESTANTE)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.PROPIETARIO)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.PROPIETARIO)
-    @Html.ValidationMessageFor(model => model.PROPIETARIO)
+<div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DURACION_PLANEADA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DURACION_PLANEADA)
+            @Html.ValidationMessageFor(model => model.DURACION_PLANEADA)
+        </div>
+    </div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIEMPO_GASTADO)    
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIEMPO_GASTADO)
+            @Html.ValidationMessageFor(model => model.TIEMPO_GASTADO)
+        </div>
+    </div>
+    <div class="inline">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TIEMPO_RESTANTE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TIEMPO_RESTANTE)
+            @Html.ValidationMessageFor(model => model.TIEMPO_RESTANTE)
+        </div>
+    </div>
 </div>
 

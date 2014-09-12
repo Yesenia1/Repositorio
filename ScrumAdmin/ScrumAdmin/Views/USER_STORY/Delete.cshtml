@@ -1,70 +1,23 @@
 @model ScrumAdmin.Models.USER_STORY
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar historia de usuario</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Esta seguro que desea seguir?</h3>
 <fieldset>
     <legend>USER_STORY</legend>
 
-    <div class="display-label">IDPUNTOSESTIM</div>
-    <div class="display-field">@Model.IDPUNTOSESTIM</div>
+    <div class="display-label">Nombre: @Model.NOMBRE</div>
 
-    <div class="display-label">IDPRIORIDAD</div>
-    <div class="display-field">@Model.IDPRIORIDAD</div>
-
-    <div class="display-label">IDSPRINT</div>
-    <div class="display-field">@Model.IDSPRINT</div>
-
-    <div class="display-label">IDESTADO</div>
-    <div class="display-field">@Model.IDESTADO</div>
-
-    <div class="display-label">IDTIPO</div>
-    <div class="display-field">@Model.IDTIPO</div>
-
-    <div class="display-label">NOMBRE</div>
-    <div class="display-field">@Model.NOMBRE</div>
-
-    <div class="display-label">DURACION_PLANEADA</div>
-    <div class="display-field">@Model.DURACION_PLANEADA</div>
-
-    <div class="display-label">TIEMPO_GASTADO</div>
-    <div class="display-field">@Model.TIEMPO_GASTADO</div>
-
-    <div class="display-label">TIEMPO_RESTANTE</div>
-    <div class="display-field">@Model.TIEMPO_RESTANTE</div>
-
-    <div class="display-label">PROPIETARIO</div>
-    <div class="display-field">@Model.PROPIETARIO</div>
-
-    <div class="display-label">EQUIPO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.EQUIPO).ToString()</div>
-
-    <div class="display-label">ESTADO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.ESTADO).ToString()</div>
-
-    <div class="display-label">PRIORIDAD</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.PRIORIDAD).ToString()</div>
-
-    <div class="display-label">PUNTOS_ESTIMACION</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.PUNTOS_ESTIMACION).ToString()</div>
-
-    <div class="display-label">SPRINT</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.SPRINT).ToString()</div>
-
-    <div class="display-label">TAREA</div>
-    <div class="display-field">@(Model.TAREA == null ? "None" : Model.TAREA.Count.ToString())</div>
-
-    <div class="display-label">TIPO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.TIPO).ToString()</div>
+    
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink("Regresar", "Index")
     </p>
 }
 

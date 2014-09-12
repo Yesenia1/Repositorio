@@ -45,7 +45,7 @@ namespace ScrumAdmin.Models
         public void Delete(int id)
         {
             var user_story = context.USER_STORY.Find(id);
-            context.USER_STORY.Remove(user_story);
+            context.USER_STORY.Remove(user_story);            
         }
 
         public void Save()

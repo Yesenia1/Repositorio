@@ -10,21 +10,21 @@ namespace ScrumAdmin.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modifique esta plantilla para poner en marcha su aplicación ASP.NET MVC.";
+            ViewBag.Message = "Sistema administrador de Metodlogia SCRUM";
 
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Página de descripción de la aplicación.";
+            ViewBag.Message = "Your app description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Página de contacto.";
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }

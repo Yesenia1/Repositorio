@@ -1,0 +1,20 @@
+@model ScrumAdmin.Models.EQUIPO
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IDUSUARIO)
+</div>
+<div class="editor-field">
+    @Html.DropDownList("IDUSUARIO", "Select")
+    @Html.ValidationMessageFor(model => model.IDUSUARIO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IDROL)
+</div>
+<div class="editor-field">
+    @Html.DropDownList("IDROL", "Select")
+    @Html.ValidationMessageFor(model => model.IDROL)
+</div>
+

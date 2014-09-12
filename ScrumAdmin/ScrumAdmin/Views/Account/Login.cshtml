@@ -1,7 +1,8 @@
-﻿@model ScrumAdmin.Models.LoginModel
+﻿@model ScrumAdmin.Models.USUARIO
 
 @{
     ViewBag.Title = "Iniciar sesión";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
 }
 
 <hgroup class="title">
@@ -18,24 +19,24 @@
         <legend>Formulario de inicio de sesión</legend>
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
+                @Html.LabelFor(m => m.NICK)
+                @Html.TextBoxFor(m => m.NICK)
+                @Html.ValidationMessageFor(m => m.NICK)
             </li>
             <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
+                @Html.LabelFor(m => m.CONTRASENNIA)
+                @Html.PasswordFor(m => m.CONTRASENNIA)
+                @Html.ValidationMessageFor(m => m.CONTRASENNIA)
             </li>
-            <li>
+            @*<li>
                 @Html.CheckBoxFor(m => m.RememberMe)
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
+            </li>*@
         </ol>
         <input type="submit" value="Iniciar sesión" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") si no tiene ninguna cuenta.
+        @Html.ActionLink("Regístrese", "Register") si no tiene ninguna cuenta.
     </p>
 }
 </section>

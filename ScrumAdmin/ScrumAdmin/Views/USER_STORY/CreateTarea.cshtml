@@ -1,0 +1,27 @@
+﻿@model ScrumAdmin.Models.TAREA
+
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear Tarea</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>TAREA</legend>
+
+		@Html.Partial("_CreateOrEditTarea", Model)
+
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
+
+
+

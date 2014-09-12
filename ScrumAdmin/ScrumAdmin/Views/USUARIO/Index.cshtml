@@ -4,43 +4,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1>Usuarios</h1>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create")
 </p>
 <table>
     <tr>
         <th></th>
         <th>
-            AP1
+            Nombre
         </th>
         <th>
-            AP2
+            Apellidos
         </th>
         <th>
-            EMAIL
-        </th>
-        <th>
-            CELULAR
-        </th>
-        <th>
-            NICK
-        </th>
-        <th>
-            CONTRASENNIA
-        </th>
-        <th>
-            EQUIPO
+            E-mail
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.ID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
         <td>
 			@item.AP1
@@ -50,19 +38,7 @@
         </td>
         <td>
 			@item.EMAIL
-        </td>
-        <td>
-			@item.CELULAR
-        </td>
-        <td>
-			@item.NICK
-        </td>
-        <td>
-			@item.CONTRASENNIA
-        </td>
-        <td>
-			@(item.EQUIPO == null ? "None" : item.EQUIPO.Count.ToString())
-        </td>
+        </td>        
     </tr>
 }
 

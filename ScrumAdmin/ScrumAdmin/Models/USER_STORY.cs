@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class USER_STORY
     {
@@ -19,17 +20,42 @@ namespace ScrumAdmin.Models
             this.TAREA = new HashSet<TAREA>();
         }
 
-        [KEY]
         public int ID { get; set; }
+
+        [Required]
+        [Display(Name = "Puntos de estimación")]
         public Nullable<int> IDPUNTOSESTIM { get; set; }
+
+        [Required]
+        [Display(Name = "Prioridad")]
         public Nullable<int> IDPRIORIDAD { get; set; }
+
+        [Display(Name = "Sprint")]
         public Nullable<int> IDSPRINT { get; set; }
+
+        [Required]
+        [Display(Name = "Estado")]
         public Nullable<int> IDESTADO { get; set; }
+
+        [Required]
+        [Display(Name = "Tipo")]
         public Nullable<int> IDTIPO { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre")]
         public string NOMBRE { get; set; }
+
+        [Display(Name = "Duracion Planeada")]
         public Nullable<int> DURACION_PLANEADA { get; set; }
+
+        [Display(Name = "Tiempo Gastado")]
         public Nullable<int> TIEMPO_GASTADO { get; set; }
+
+        [Display(Name = "Tiempo Restante")]
         public Nullable<int> TIEMPO_RESTANTE { get; set; }
+
+        [Required]
+        [Display(Name = "Propietario")]
         public Nullable<int> PROPIETARIO { get; set; }
     
         public virtual EQUIPO EQUIPO { get; set; }

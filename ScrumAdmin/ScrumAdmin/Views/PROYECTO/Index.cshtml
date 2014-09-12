@@ -1,77 +1,42 @@
 @model IEnumerable<ScrumAdmin.Models.PROYECTO>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Proyectos";
 }
 
-<h2>Index</h2>
+<h1>Proyectos</h1>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo proyecto", "Create")
 </p>
+
 <table>
     <tr>
         <th></th>
         <th>
-            NUM_SPRINTS
+            Nombre
         </th>
         <th>
-            NUM_RELEASES
-        </th>
-        <th>
-            DESCRIPCION
-        </th>
-        <th>
-            CRITERIOS_ACEPTACION
-        </th>
-        <th>
-            EQUIPO
-        </th>
-        <th>
-            RELEASE
-        </th>
-        <th>
-            RIESGO
-        </th>
-        <th>
-            STAKEHOLDER
-        </th>
+            #Releases
+        </th>        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-        <td>
-			@item.NUM_SPRINTS
-        </td>
-        <td>
-			@item.NUM_RELEASES
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Equipo", "IndexEquipo", new { id=item.ID }) |
+            @Html.ActionLink("Historias", "IndexStory", new { id=item.ID })
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID })*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
         <td>
 			@item.DESCRIPCION
         </td>
         <td>
-			@(item.CRITERIOS_ACEPTACION == null ? "None" : item.CRITERIOS_ACEPTACION.Count.ToString())
-        </td>
-        <td>
-			@(item.EQUIPO == null ? "None" : item.EQUIPO.Count.ToString())
-        </td>
-        <td>
-			@(item.RELEASE == null ? "None" : item.RELEASE.Count.ToString())
-        </td>
-        <td>
-			@(item.RIESGO == null ? "None" : item.RIESGO.Count.ToString())
-        </td>
-        <td>
-			@(item.STAKEHOLDER == null ? "None" : item.STAKEHOLDER.Count.ToString())
-        </td>
+			@item.NUM_RELEASES
+        </td>        
     </tr>
 }
 
 </table>
-
-

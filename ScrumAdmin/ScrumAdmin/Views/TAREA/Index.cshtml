@@ -1,50 +1,44 @@
 @model IEnumerable<ScrumAdmin.Models.TAREA>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tareas";
 }
 
-<h2>Index</h2>
+<h1>Tareas</h1>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva", "Create")
 </p>
 <table>
     <tr>
         <th></th>
         <th>
-            IDUSERSTORY
+            Nombre
         </th>
         <th>
-            NOMBRE
+            Historia de Usuario
         </th>
         <th>
-            ESFUERZO_INVERTIDO
-        </th>
-        <th>
-            USER_STORY
+            Esfuerzo Invertido
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-        <td>
-			@item.IDUSERSTORY
+            @*@Html.ActionLink("Editar", "Edit", new { id=item.ID })*@ |
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID })*@ |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
         <td>
 			@item.NOMBRE
         </td>
         <td>
-			@item.ESFUERZO_INVERTIDO
+			@item.USER_STORY.NOMBRE
         </td>
         <td>
-			@Html.DisplayTextFor(_ => item.USER_STORY).ToString()
-        </td>
+			@item.ESFUERZO_INVERTIDO
+        </td>        
     </tr>
 }
 

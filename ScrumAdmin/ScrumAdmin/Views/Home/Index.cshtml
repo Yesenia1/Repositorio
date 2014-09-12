@@ -1,45 +1,39 @@
 ﻿@{
-    ViewBag.Title = "Página principal";
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
 }
+
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <p>
-                Para obtener más información sobre ASP.NET MVC, visite
-                <a href="http://asp.net/mvc" title="Sitio web de ASP.NET MVC">http://asp.net/mvc</a>.
-                La página incluye <mark>vídeos, cursos y ejemplos</mark> para ayudarle a sacar el máximo partido a ASP.NET MVC.
-                Si tiene alguna pregunta relacionada con ASP.NET MVC, visite
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="Foro de ASP.NET MVC">nuestros foros</a>.
+                SCRUM es un modelo de referencia que define un conjunto de prácticas y roles,
+                y que puede tomarse como punto de partida para definir el proceso
+                de desarrollo que se ejecutará durante un proyecto. Los roles principales en Scrum son el ScrumMaster,
+                que mantiene los procesos y trabaja de forma similar al director de proyecto, el ProductOwner,
+                que representa a los stakeholders (interesados externos o internos), y el Team que incluye a los desarrolladores.
             </p>
         </div>
     </section>
 }
-<h3>Le sugerimos lo siguiente:</h3>
+<h3>Scrum se caracteriza por:</h3>
 <ol class="round">
     <li class="one">
-        <h5>Introducción</h5>
-        ASP.NET MVC ofrece una manera eficaz basada en patrones de crear sitios web dinámicos que
-        permite llevar a cabo una clara separación de aspectos y proporciona control sobre el marcado
-        para un desarrollo más ágil y atractivo. ASP.NET MVC incluye numerosas características que ofrecen
-        un entorno rápido y compatible con TDD para crear aplicaciones sofisticadas que utilicen
-        los estándares web más recientes.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Más información…</a>
+        <p>Adoptar una estrategia de desarrollo incremental,</p>
+        <p>en lugar de la planificación y ejecución completa del producto.</p>
     </li>
 
     <li class="two">
-        <h5>Agregar paquetes NuGet y poner en marcha su codificación</h5>
-        NuGet facilita la instalación y actualización de herramientas y bibliotecas gratuitas.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Más información…</a>
+        <p>Basar la calidad del resultado más en el conocimiento tácito de las personas</p>
+        <p> en equipos autoorganizados, que en la calidad de los procesos empleados.</p>
+        
     </li>
 
     <li class="three">
-        <h5>Buscar hospedaje web</h5>
-        Encuentre fácilmente empresas de alojamiento web que ofrezcan la mejor relación de características
-        y precio para sus aplicaciones.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Más información…</a>
+        <p>Solapamiento de las diferentes fases del desarrollo, </p>
+        <p>en lugar de realizar una tras otra en un ciclo secuencial o de cascada</p>        
     </li>
 </ol>

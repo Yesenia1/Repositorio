@@ -11,14 +11,14 @@ namespace ScrumAdmin.Filters
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
-        //private static SimpleMembershipInitializer _initializer;
+        private static SimpleMembershipInitializer _initializer;
         private static object _initializerLock = new object();
-        //private static bool _isInitialized;
+        private static bool _isInitialized;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            // Ensure ASP.NET Simple Membership is initialized only once per app start
-            //LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+            // Asegúrese de que ASP.NET Simple Membership se inicialice solo una vez por inicio de la aplicación
+            LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
         }
 
         private class SimpleMembershipInitializer
@@ -33,16 +33,16 @@ namespace ScrumAdmin.Filters
                     {
                         if (!context.Database.Exists())
                         {
-                            // Create the SimpleMembership database without Entity Framework migration schema
+                            // Crear la base de datos SimpleMembership sin el esquema de migración de Entity Framework
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }
 
-                    //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidOperationException("The ASP.NET Simple Membership database could not be initialized. For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588", ex);
+                    throw new InvalidOperationException("No se pudo inicializar la base de datos de ASP.NET Simple Membership. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkId=256588", ex);
                 }
             }
         }

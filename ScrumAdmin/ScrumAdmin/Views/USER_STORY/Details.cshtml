@@ -1,67 +1,35 @@
 @model ScrumAdmin.Models.USER_STORY
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detailes";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <fieldset>
     <legend>USER_STORY</legend>
 
-    <div class="display-label">IDPUNTOSESTIM</div>
-    <div class="display-field">@Model.IDPUNTOSESTIM</div>
+    <div class="display-label">Nombre: @Model.NOMBRE</div>
 
-    <div class="display-label">IDPRIORIDAD</div>
-    <div class="display-field">@Model.IDPRIORIDAD</div>
+    <div class="display-label">Puntos de estimación: @Model.PUNTOS_ESTIMACION.NOMBRE</div>
 
-    <div class="display-label">IDSPRINT</div>
-    <div class="display-field">@Model.IDSPRINT</div>
+    <div class="display-label">Prioridad: @Model.PRIORIDAD.NOMBRE</div>
+    
+    <div class="display-label">Estado: @Model.ESTADO.NOMBRE</div>
 
-    <div class="display-label">IDESTADO</div>
-    <div class="display-field">@Model.IDESTADO</div>
+    <div class="display-label">Tipo: @Model.TIPO.NOMBRE</div>    
 
-    <div class="display-label">IDTIPO</div>
-    <div class="display-field">@Model.IDTIPO</div>
+    <div class="display-label">Duracion Planeada: @Model.DURACION_PLANEADA</div>
 
-    <div class="display-label">NOMBRE</div>
-    <div class="display-field">@Model.NOMBRE</div>
+    <div class="display-label">Tiempo Gastado: @Model.TIEMPO_GASTADO</div>
 
-    <div class="display-label">DURACION_PLANEADA</div>
-    <div class="display-field">@Model.DURACION_PLANEADA</div>
+    <div class="display-label">Tiempo Restante: @Model.TIEMPO_RESTANTE</div>
 
-    <div class="display-label">TIEMPO_GASTADO</div>
-    <div class="display-field">@Model.TIEMPO_GASTADO</div>
+    <div class="display-label">Propietario: @Model.EQUIPO.USUARIO.AP1 @Model.EQUIPO.USUARIO.AP2</div>
 
-    <div class="display-label">TIEMPO_RESTANTE</div>
-    <div class="display-field">@Model.TIEMPO_RESTANTE</div>
-
-    <div class="display-label">PROPIETARIO</div>
-    <div class="display-field">@Model.PROPIETARIO</div>
-
-    <div class="display-label">EQUIPO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.EQUIPO).ToString()</div>
-
-    <div class="display-label">ESTADO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.ESTADO).ToString()</div>
-
-    <div class="display-label">PRIORIDAD</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.PRIORIDAD).ToString()</div>
-
-    <div class="display-label">PUNTOS_ESTIMACION</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.PUNTOS_ESTIMACION).ToString()</div>
-
-    <div class="display-label">SPRINT</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.SPRINT).ToString()</div>
-
-    <div class="display-label">TAREA</div>
-    <div class="display-field">@(Model.TAREA == null ? "None" : Model.TAREA.Count.ToString())</div>
-
-    <div class="display-label">TIPO</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.TIPO).ToString()</div>
 </fieldset>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
 

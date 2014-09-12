@@ -18,8 +18,7 @@ namespace ScrumAdmin.Models
         {
             this.EQUIPO = new HashSet<EQUIPO>();
         }
-
-        [KEY]
+    
         public int ID { get; set; }
         public string NOMBRE { get; set; }
     

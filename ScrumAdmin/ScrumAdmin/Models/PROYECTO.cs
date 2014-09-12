@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PROYECTO
     {
@@ -23,10 +24,18 @@ namespace ScrumAdmin.Models
             this.STAKEHOLDER = new HashSet<STAKEHOLDER>();
         }
     
-        [KEY]
         public int ID { get; set; }
+
+
+        [Display(Name = "Numero de Sprints")]
         public Nullable<int> NUM_SPRINTS { get; set; }
+
+        [Required]
+        [Display(Name = "Numero de Releases")]
         public Nullable<int> NUM_RELEASES { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre")]
         public string DESCRIPCION { get; set; }
     
         public virtual ICollection<CRITERIOS_ACEPTACION> CRITERIOS_ACEPTACION { get; set; }

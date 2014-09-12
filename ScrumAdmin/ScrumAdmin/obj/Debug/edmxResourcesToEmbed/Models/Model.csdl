@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CRITERIOS_ACEPTACION" EntityType="Model.CRITERIOS_ACEPTACION" />
+    <EntitySet Name="EQUIPO" EntityType="Model.EQUIPO" />
+    <EntitySet Name="ESTADO" EntityType="Model.ESTADO" />
+    <EntitySet Name="ESTRATEGIA" EntityType="Model.ESTRATEGIA" />
+    <EntitySet Name="INTERES" EntityType="Model.INTERES" />
+    <EntitySet Name="PLAN_ACCION" EntityType="Model.PLAN_ACCION" />
+    <EntitySet Name="PODER" EntityType="Model.PODER" />
+    <EntitySet Name="PRIORIDAD" EntityType="Model.PRIORIDAD" />
+    <EntitySet Name="PROYECTO" EntityType="Model.PROYECTO" />
+    <EntitySet Name="PUNTOS_ESTIMACION" EntityType="Model.PUNTOS_ESTIMACION" />
+    <EntitySet Name="RELEASE" EntityType="Model.RELEASE" />
+    <EntitySet Name="RIESGO" EntityType="Model.RIESGO" />
+    <EntitySet Name="ROL" EntityType="Model.ROL" />
+    <EntitySet Name="SPRINT" EntityType="Model.SPRINT" />
+    <EntitySet Name="SPRINT_RETROSPECTIVE" EntityType="Model.SPRINT_RETROSPECTIVE" />
+    <EntitySet Name="SPRINT_REVIEW" EntityType="Model.SPRINT_REVIEW" />
+    <EntitySet Name="STAKEHOLDER" EntityType="Model.STAKEHOLDER" />
+    <EntitySet Name="TAREA" EntityType="Model.TAREA" />
+    <EntitySet Name="TIPO" EntityType="Model.TIPO" />
+    <EntitySet Name="USER_STORY" EntityType="Model.USER_STORY" />
+    <EntitySet Name="USUARIO" EntityType="Model.USUARIO" />
+    <AssociationSet Name="FK_CRITERIO_PROY_CRIT_PROYECTO" Association="Model.FK_CRITERIO_PROY_CRIT_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="CRITERIOS_ACEPTACION" EntitySet="CRITERIOS_ACEPTACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_PROY_EQ_PROYECTO" Association="Model.FK_EQUIPO_PROY_EQ_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_ROL_EQ_ROL" Association="Model.FK_EQUIPO_ROL_EQ_ROL">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_USER_EQ_USUARIO" Association="Model.FK_EQUIPO_USER_EQ_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_USERSTORY_EQUIPO" Association="Model.FK_USER_STO_USERSTORY_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_ESTADO_US_ESTADO" Association="Model.FK_USER_STO_ESTADO_US_ESTADO">
+      <End Role="ESTADO" EntitySet="ESTADO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIESGO_RIESGO_ES_ESTRATEG" Association="Model.FK_RIESGO_RIESGO_ES_ESTRATEG">
+      <End Role="ESTRATEGIA" EntitySet="ESTRATEGIA" />
+      <End Role="RIESGO" EntitySet="RIESGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_INTERES_S_INTERES" Association="Model.FK_STAKEHOL_INTERES_S_INTERES">
+      <End Role="INTERES" EntitySet="INTERES" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLAN_ACC_RIESGO_PL_RIESGO" Association="Model.FK_PLAN_ACC_RIESGO_PL_RIESGO">
+      <End Role="RIESGO" EntitySet="RIESGO" />
+      <End Role="PLAN_ACCION" EntitySet="PLAN_ACCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_RELATIONS_PODER" Association="Model.FK_STAKEHOL_RELATIONS_PODER">
+      <End Role="PODER" EntitySet="PODER" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_PRIOR_USE_PRIORIDA" Association="Model.FK_USER_STO_PRIOR_USE_PRIORIDA">
+      <End Role="PRIORIDAD" EntitySet="PRIORIDAD" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RELEASE_PROY_RELE_PROYECTO" Association="Model.FK_RELEASE_PROY_RELE_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="RELEASE" EntitySet="RELEASE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RIESGO_PROY_RIES_PROYECTO" Association="Model.FK_RIESGO_PROY_RIES_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="RIESGO" EntitySet="RIESGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAKEHOL_PROY_STAK_PROYECTO" Association="Model.FK_STAKEHOL_PROY_STAK_PROYECTO">
+      <End Role="PROYECTO" EntitySet="PROYECTO" />
+      <End Role="STAKEHOLDER" EntitySet="STAKEHOLDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_PUNTOS_US_PUNTOS_E" Association="Model.FK_USER_STO_PUNTOS_US_PUNTOS_E">
+      <End Role="PUNTOS_ESTIMACION" EntitySet="PUNTOS_ESTIMACION" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_SPRINT_RE_RELEASE" Association="Model.FK_SPRINT_SPRINT_RE_RELEASE">
+      <End Role="RELEASE" EntitySet="RELEASE" />
+      <End Role="SPRINT" EntitySet="SPRINT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_R_RELATIONS_SPRINT" Association="Model.FK_SPRINT_R_RELATIONS_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="SPRINT_RETROSPECTIVE" EntitySet="SPRINT_RETROSPECTIVE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPRINT_R_SPRINT_SP_SPRINT" Association="Model.FK_SPRINT_R_SPRINT_SP_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="SPRINT_REVIEW" EntitySet="SPRINT_REVIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_SPRINT_US_SPRINT" Association="Model.FK_USER_STO_SPRINT_US_SPRINT">
+      <End Role="SPRINT" EntitySet="SPRINT" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAREA_TAREA_USE_USER_STO" Association="Model.FK_TAREA_TAREA_USE_USER_STO">
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+      <End Role="TAREA" EntitySet="TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_STO_TIPO_USER_TIPO" Association="Model.FK_USER_STO_TIPO_USER_TIPO">
+      <End Role="TIPO" EntitySet="TIPO" />
+      <End Role="USER_STORY" EntitySet="USER_STORY" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CRITERIOS_ACEPTACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="PROYECTO" Relationship="Model.FK_CRITERIO_PROY_CRIT_PROYECTO" FromRole="CRITERIOS_ACEPTACION" ToRole="PROYECTO" />
+  </EntityType>
+  <EntityType Name="EQUIPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDUSUARIO" Type="Int32" />
+    <Property Name="IDROL" Type="Int32" />
+    <Property Name="IDPROYECTO" Type="Int32" />
+    <NavigationProperty Name="PROYECTO" Relationship="Model.FK_EQUIPO_PROY_EQ_PROYECTO" FromRole="EQUIPO" ToRole="PROYECTO" />
+    <NavigationProperty Name="ROL" Relationship="Model.FK_EQUIPO_ROL_EQ_ROL" FromRole="EQUIPO" ToRole="ROL" />
+    <NavigationProperty Name="USUARIO" Relationship="Model.FK_EQUIPO_USER_EQ_USUARIO" FromRole="EQUIPO" ToRole="USUARIO" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_USERSTORY_EQUIPO" FromRole="EQUIPO" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_ESTADO_US_ESTADO" FromRole="ESTADO" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="ESTRATEGIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RIESGO" Relationship="Model.FK_RIESGO_RIESGO_ES_ESTRATEG" FromRole="ESTRATEGIA" ToRole="RIESGO" />
+  </EntityType>
+  <EntityType Name="INTERES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="STAKEHOLDER" Relationship="Model.FK_STAKEHOL_INTERES_S_INTERES" FromRole="INTERES" ToRole="STAKEHOLDER" />
+  </EntityType>
+  <EntityType Name="PLAN_ACCION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDRIESGO" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RIESGO" Relationship="Model.FK_PLAN_ACC_RIESGO_PL_RIESGO" FromRole="PLAN_ACCION" ToRole="RIESGO" />
+  </EntityType>
+  <EntityType Name="PODER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="STAKEHOLDER" Relationship="Model.FK_STAKEHOL_RELATIONS_PODER" FromRole="PODER" ToRole="STAKEHOLDER" />
+  </EntityType>
+  <EntityType Name="PRIORIDAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_PRIOR_USE_PRIORIDA" FromRole="PRIORIDAD" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="PROYECTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NUM_SPRINTS" Type="Int32" />
+    <Property Name="NUM_RELEASES" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CRITERIOS_ACEPTACION" Relationship="Model.FK_CRITERIO_PROY_CRIT_PROYECTO" FromRole="PROYECTO" ToRole="CRITERIOS_ACEPTACION" />
+    <NavigationProperty Name="EQUIPO" Relationship="Model.FK_EQUIPO_PROY_EQ_PROYECTO" FromRole="PROYECTO" ToRole="EQUIPO" />
+    <NavigationProperty Name="RELEASE" Relationship="Model.FK_RELEASE_PROY_RELE_PROYECTO" FromRole="PROYECTO" ToRole="RELEASE" />
+    <NavigationProperty Name="RIESGO" Relationship="Model.FK_RIESGO_PROY_RIES_PROYECTO" FromRole="PROYECTO" ToRole="RIESGO" />
+    <NavigationProperty Name="STAKEHOLDER" Relationship="Model.FK_STAKEHOL_PROY_STAK_PROYECTO" FromRole="PROYECTO" ToRole="STAKEHOLDER" />
+  </EntityType>
+  <EntityType Name="PUNTOS_ESTIMACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PUNTO" Type="Int32" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_PUNTOS_US_PUNTOS_E" FromRole="PUNTOS_ESTIMACION" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="RELEASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FECHA_ENTREGA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PROYECTO" Relationship="Model.FK_RELEASE_PROY_RELE_PROYECTO" FromRole="RELEASE" ToRole="PROYECTO" />
+    <NavigationProperty Name="SPRINT" Relationship="Model.FK_SPRINT_SPRINT_RE_RELEASE" FromRole="RELEASE" ToRole="SPRINT" />
+  </EntityType>
+  <EntityType Name="RIESGO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROYECTO" Type="Int32" />
+    <Property Name="IDESTRATEGIA" Type="Int32" />
+    <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="DESC_DETALLADA" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="PROBABILIDAD" Type="Int32" />
+    <NavigationProperty Name="ESTRATEGIA" Relationship="Model.FK_RIESGO_RIESGO_ES_ESTRATEG" FromRole="RIESGO" ToRole="ESTRATEGIA" />
+    <NavigationProperty Name="PLAN_ACCION" Relationship="Model.FK_PLAN_ACC_RIESGO_PL_RIESGO" FromRole="RIESGO" ToRole="PLAN_ACCION" />
+    <NavigationProperty Name="PROYECTO" Relationship="Model.FK_RIESGO_PROY_RIES_PROYECTO" FromRole="RIESGO" ToRole="PROYECTO" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="EQUIPO" Relationship="Model.FK_EQUIPO_ROL_EQ_ROL" FromRole="ROL" ToRole="EQUIPO" />
+  </EntityType>
+  <EntityType Name="SPRINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDRELEASE" Type="Int32" />
+    <Property Name="FECHA_INICIO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_FINAL" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RELEASE" Relationship="Model.FK_SPRINT_SPRINT_RE_RELEASE" FromRole="SPRINT" ToRole="RELEASE" />
+    <NavigationProperty Name="SPRINT_RETROSPECTIVE" Relationship="Model.FK_SPRINT_R_RELATIONS_SPRINT" FromRole="SPRINT" ToRole="SPRINT_RETROSPECTIVE" />
+    <NavigationProperty Name="SPRINT_REVIEW" Relationship="Model.FK_SPRINT_R_SPRINT_SP_SPRINT" FromRole="SPRINT" ToRole="SPRINT_REVIEW" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_SPRINT_US_SPRINT" FromRole="SPRINT" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="SPRINT_RETROSPECTIVE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDSPRINT" Type="Int32" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SPRINT" Relationship="Model.FK_SPRINT_R_RELATIONS_SPRINT" FromRole="SPRINT_RETROSPECTIVE" ToRole="SPRINT" />
+  </EntityType>
+  <EntityType Name="SPRINT_REVIEW">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDSPRINT" Type="Int32" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SPRINT" Relationship="Model.FK_SPRINT_R_SPRINT_SP_SPRINT" FromRole="SPRINT_REVIEW" ToRole="SPRINT" />
+  </EntityType>
+  <EntityType Name="STAKEHOLDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPODER" Type="Int32" />
+    <Property Name="IDINTERES" Type="Int32" />
+    <Property Name="IDPROYECTO" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AP1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AP2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CELULAR" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EMPRESA" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EXPECTATIVA" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="INTERES" Relationship="Model.FK_STAKEHOL_INTERES_S_INTERES" FromRole="STAKEHOLDER" ToRole="INTERES" />
+    <NavigationProperty Name="PODER" Relationship="Model.FK_STAKEHOL_RELATIONS_PODER" FromRole="STAKEHOLDER" ToRole="PODER" />
+    <NavigationProperty Name="PROYECTO" Relationship="Model.FK_STAKEHOL_PROY_STAK_PROYECTO" FromRole="STAKEHOLDER" ToRole="PROYECTO" />
+  </EntityType>
+  <EntityType Name="TAREA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDUSERSTORY" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ESFUERZO_INVERTIDO" Type="Int32" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_TAREA_TAREA_USE_USER_STO" FromRole="TAREA" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="TIPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="USER_STORY" Relationship="Model.FK_USER_STO_TIPO_USER_TIPO" FromRole="TIPO" ToRole="USER_STORY" />
+  </EntityType>
+  <EntityType Name="USER_STORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPUNTOSESTIM" Type="Int32" />
+    <Property Name="IDPRIORIDAD" Type="Int32" />
+    <Property Name="IDSPRINT" Type="Int32" />
+    <Property Name="IDESTADO" Type="Int32" />
+    <Property Name="IDTIPO" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DURACION_PLANEADA" Type="Int32" />
+    <Property Name="TIEMPO_GASTADO" Type="Int32" />
+    <Property Name="TIEMPO_RESTANTE" Type="Int32" />
+    <Property Name="PROPIETARIO" Type="Int32" />
+    <NavigationProperty Name="EQUIPO" Relationship="Model.FK_USER_STO_USERSTORY_EQUIPO" FromRole="USER_STORY" ToRole="EQUIPO" />
+    <NavigationProperty Name="ESTADO" Relationship="Model.FK_USER_STO_ESTADO_US_ESTADO" FromRole="USER_STORY" ToRole="ESTADO" />
+    <NavigationProperty Name="PRIORIDAD" Relationship="Model.FK_USER_STO_PRIOR_USE_PRIORIDA" FromRole="USER_STORY" ToRole="PRIORIDAD" />
+    <NavigationProperty Name="PUNTOS_ESTIMACION" Relationship="Model.FK_USER_STO_PUNTOS_US_PUNTOS_E" FromRole="USER_STORY" ToRole="PUNTOS_ESTIMACION" />
+    <NavigationProperty Name="SPRINT" Relationship="Model.FK_USER_STO_SPRINT_US_SPRINT" FromRole="USER_STORY" ToRole="SPRINT" />
+    <NavigationProperty Name="TAREA" Relationship="Model.FK_TAREA_TAREA_USE_USER_STO" FromRole="USER_STORY" ToRole="TAREA" />
+    <NavigationProperty Name="TIPO" Relationship="Model.FK_USER_STO_TIPO_USER_TIPO" FromRole="USER_STORY" ToRole="TIPO" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AP1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AP2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CELULAR" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="NICK" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CONTRASENNIA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="EQUIPO" Relationship="Model.FK_EQUIPO_USER_EQ_USUARIO" FromRole="USUARIO" ToRole="EQUIPO" />
+  </EntityType>
+  <Association Name="FK_CRITERIO_PROY_CRIT_PROYECTO">
+    <End Role="PROYECTO" Type="Model.PROYECTO" Multiplicity="0..1" />
+    <End Role="CRITERIOS_ACEPTACION" Type="Model.CRITERIOS_ACEPTACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRITERIOS_ACEPTACION">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_PROY_EQ_PROYECTO">
+    <End Role="PROYECTO" Type="Model.PROYECTO" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_ROL_EQ_ROL">
+    <End Role="ROL" Type="Model.ROL" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_USER_EQ_USUARIO">
+    <End Role="USUARIO" Type="Model.USUARIO" Multiplicity="0..1" />
+    <End Role="EQUIPO" Type="Model.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="IDUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_USERSTORY_EQUIPO">
+    <End Role="EQUIPO" Type="Model.EQUIPO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="PROPIETARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_ESTADO_US_ESTADO">
+    <End Role="ESTADO" Type="Model.ESTADO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIESGO_RIESGO_ES_ESTRATEG">
+    <End Role="ESTRATEGIA" Type="Model.ESTRATEGIA" Multiplicity="0..1" />
+    <End Role="RIESGO" Type="Model.RIESGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTRATEGIA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RIESGO">
+        <PropertyRef Name="IDESTRATEGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_INTERES_S_INTERES">
+    <End Role="INTERES" Type="Model.INTERES" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INTERES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDINTERES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLAN_ACC_RIESGO_PL_RIESGO">
+    <End Role="RIESGO" Type="Model.RIESGO" Multiplicity="0..1" />
+    <End Role="PLAN_ACCION" Type="Model.PLAN_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIESGO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PLAN_ACCION">
+        <PropertyRef Name="IDRIESGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_RELATIONS_PODER">
+    <End Role="PODER" Type="Model.PODER" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PODER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDPODER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_PRIOR_USE_PRIORIDA">
+    <End Role="PRIORIDAD" Type="Model.PRIORIDAD" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRIORIDAD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDPRIORIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RELEASE_PROY_RELE_PROYECTO">
+    <End Role="PROYECTO" Type="Model.PROYECTO" Multiplicity="0..1" />
+    <End Role="RELEASE" Type="Model.RELEASE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELEASE">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RIESGO_PROY_RIES_PROYECTO">
+    <End Role="PROYECTO" Type="Model.PROYECTO" Multiplicity="0..1" />
+    <End Role="RIESGO" Type="Model.RIESGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RIESGO">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAKEHOL_PROY_STAK_PROYECTO">
+    <End Role="PROYECTO" Type="Model.PROYECTO" Multiplicity="0..1" />
+    <End Role="STAKEHOLDER" Type="Model.STAKEHOLDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROYECTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STAKEHOLDER">
+        <PropertyRef Name="IDPROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_PUNTOS_US_PUNTOS_E">
+    <End Role="PUNTOS_ESTIMACION" Type="Model.PUNTOS_ESTIMACION" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PUNTOS_ESTIMACION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDPUNTOSESTIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_SPRINT_RE_RELEASE">
+    <End Role="RELEASE" Type="Model.RELEASE" Multiplicity="0..1" />
+    <End Role="SPRINT" Type="Model.SPRINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RELEASE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT">
+        <PropertyRef Name="IDRELEASE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_R_RELATIONS_SPRINT">
+    <End Role="SPRINT" Type="Model.SPRINT" Multiplicity="0..1" />
+    <End Role="SPRINT_RETROSPECTIVE" Type="Model.SPRINT_RETROSPECTIVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT_RETROSPECTIVE">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPRINT_R_SPRINT_SP_SPRINT">
+    <End Role="SPRINT" Type="Model.SPRINT" Multiplicity="0..1" />
+    <End Role="SPRINT_REVIEW" Type="Model.SPRINT_REVIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SPRINT_REVIEW">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_SPRINT_US_SPRINT">
+    <End Role="SPRINT" Type="Model.SPRINT" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPRINT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDSPRINT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAREA_TAREA_USE_USER_STO">
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="0..1" />
+    <End Role="TAREA" Type="Model.TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_STORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAREA">
+        <PropertyRef Name="IDUSERSTORY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_STO_TIPO_USER_TIPO">
+    <End Role="TIPO" Type="Model.TIPO" Multiplicity="0..1" />
+    <End Role="USER_STORY" Type="Model.USER_STORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER_STORY">
+        <PropertyRef Name="IDTIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

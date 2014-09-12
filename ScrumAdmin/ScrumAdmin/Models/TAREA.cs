@@ -11,13 +11,22 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class TAREA
     {
-        [KEY]
         public int ID { get; set; }
+
+
+        [Display(Name = "User Story")]
         public Nullable<int> IDUSERSTORY { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre")]
         public string NOMBRE { get; set; }
+
+        [Required]
+        [Display(Name = "Esfuerzo en Horas")]
         public Nullable<int> ESFUERZO_INVERTIDO { get; set; }
     
         public virtual USER_STORY USER_STORY { get; set; }
