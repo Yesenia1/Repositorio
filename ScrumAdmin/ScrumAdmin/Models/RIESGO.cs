@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class RIESGO
     {
@@ -18,7 +19,8 @@ namespace ScrumAdmin.Models
         {
             this.PLAN_ACCION = new HashSet<PLAN_ACCION>();
         }
-    
+
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDPROYECTO { get; set; }
         public Nullable<int> IDESTRATEGIA { get; set; }

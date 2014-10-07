@@ -1,0 +1,113 @@
+@model IEnumerable<ScrumAdmin.Models.STAKEHOLDER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            IDPODER
+        </th>
+        <th>
+            IDINTERES
+        </th>
+        <th>
+            IDPROYECTO
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            AP1
+        </th>
+        <th>
+            AP2
+        </th>
+        <th>
+            CELULAR
+        </th>
+        <th>
+            EMPRESA
+        </th>
+        <th>
+            EMAIL
+        </th>
+        <th>
+            DIRECCION
+        </th>
+        <th>
+            EXPECTATIVA
+        </th>
+        <th>
+            INTERES
+        </th>
+        <th>
+            PODER
+        </th>
+        <th>
+            PROYECTO
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.IDPODER
+        </td>
+        <td>
+			@item.IDINTERES
+        </td>
+        <td>
+			@item.IDPROYECTO
+        </td>
+        <td>
+			@item.NOMBRE
+        </td>
+        <td>
+			@item.AP1
+        </td>
+        <td>
+			@item.AP2
+        </td>
+        <td>
+			@item.CELULAR
+        </td>
+        <td>
+			@item.EMPRESA
+        </td>
+        <td>
+			@item.EMAIL
+        </td>
+        <td>
+			@item.DIRECCION
+        </td>
+        <td>
+			@item.EXPECTATIVA
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.INTERES).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PODER).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PROYECTO).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

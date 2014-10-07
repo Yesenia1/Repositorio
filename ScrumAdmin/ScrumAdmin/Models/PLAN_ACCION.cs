@@ -11,9 +11,11 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PLAN_ACCION
     {
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDRIESGO { get; set; }
         public string NOMBRE { get; set; }

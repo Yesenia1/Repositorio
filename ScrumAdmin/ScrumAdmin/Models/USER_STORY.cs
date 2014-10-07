@@ -15,6 +15,7 @@ namespace ScrumAdmin.Models
     
     public partial class USER_STORY
     {
+        
         public USER_STORY()
         {
             this.TAREA = new HashSet<TAREA>();

@@ -37,7 +37,8 @@ namespace ScrumAdmin.Models
         [Required]
         [Display(Name = "Nombre")]
         public string DESCRIPCION { get; set; }
-    
+
+        [Key]
         public virtual ICollection<CRITERIOS_ACEPTACION> CRITERIOS_ACEPTACION { get; set; }
         public virtual ICollection<EQUIPO> EQUIPO { get; set; }
         public virtual ICollection<RELEASE> RELEASE { get; set; }

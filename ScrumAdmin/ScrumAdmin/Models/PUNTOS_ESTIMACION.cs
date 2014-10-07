@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PUNTOS_ESTIMACION
     {
@@ -18,7 +19,8 @@ namespace ScrumAdmin.Models
         {
             this.USER_STORY = new HashSet<USER_STORY>();
         }
-    
+
+        [Key]
         public int ID { get; set; }
         public string NOMBRE { get; set; }
         public Nullable<int> PUNTO { get; set; }

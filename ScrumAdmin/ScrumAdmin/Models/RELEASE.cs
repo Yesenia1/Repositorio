@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class RELEASE
     {
@@ -18,7 +19,8 @@ namespace ScrumAdmin.Models
         {
             this.SPRINT = new HashSet<SPRINT>();
         }
-    
+
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDPROYECTO { get; set; }
         public string NOMBRE { get; set; }

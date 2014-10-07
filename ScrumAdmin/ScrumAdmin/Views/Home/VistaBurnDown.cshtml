@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "VistaBurnDown";
+}
+
+<h2>VistaBurnDown</h2>
+<script type="text/javascript" src="/Scripts/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+
+    function drawVisualization() {
+        $.get('Home/GetData', {},
+
+            function (data) {
+                var tdata = new google.visualization.DataTable();
+
+                tdata.addColumn('string', 'Year');
+                tdata.addColumn('number', 'Salary');
+                tdata.addColumn('number', 'Expensive');
+
+                for (var i = 0; i < data.length; i++) {
+                    tdata.addRow([data[i].Expensive, data[i].Salary, data[i].Year]);
+                }
+
+                var options = {
+                    title: "Grafico BurnDown"
+                };
+                // Create and draw the visualization.
+              var chart =  new google.visualization.LineChart(document.getElementById('visualization'));
+               chart.draw(tdata, options);
+            });
+    };
+    google.setOnLoadCallback(drawVisualization);
+
+</script>
+<div  id="visualization" style="width: 600px; height: 400px; margin: auto"></div>
+

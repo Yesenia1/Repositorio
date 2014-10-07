@@ -11,9 +11,11 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SPRINT_RETROSPECTIVE
     {
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDSPRINT { get; set; }
         public string COMENTARIO { get; set; }

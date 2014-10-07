@@ -1,0 +1,28 @@
+@model ScrumAdmin.Models.SPRINT
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IDRELEASE)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.IDRELEASE)
+    @Html.ValidationMessageFor(model => model.IDRELEASE)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FECHA_INICIO)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FECHA_INICIO)
+    @Html.ValidationMessageFor(model => model.FECHA_INICIO)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FECHA_FINAL)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FECHA_FINAL)
+    @Html.ValidationMessageFor(model => model.FECHA_FINAL)
+</div>
+

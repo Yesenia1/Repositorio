@@ -188,6 +188,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BurnDown.cs" />
     <Compile Include="Controllers\EQUIPOController.cs" />
     <Compile Include="Controllers\ESTADOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -196,6 +197,8 @@
     <Compile Include="Controllers\PUNTOS_ESTIMACIONController.cs" />
     <Compile Include="Controllers\RELEASEController.cs" />
     <Compile Include="Controllers\ROLController.cs" />
+    <Compile Include="Controllers\SPRINTController.cs" />
+    <Compile Include="Controllers\STAKEHOLDERController.cs" />
     <Compile Include="Controllers\TAREAController.cs" />
     <Compile Include="Controllers\TIPOController.cs" />
     <Compile Include="Controllers\USER_STORYController.cs" />
@@ -270,6 +273,7 @@
     <Compile Include="Models\SPRINT.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SPRINTRepository.cs" />
     <Compile Include="Models\SPRINT_RETROSPECTIVE.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -279,6 +283,7 @@
     <Compile Include="Models\STAKEHOLDER.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\STAKEHOLDERRepository.cs" />
     <Compile Include="Models\TAREA.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -498,6 +503,19 @@
     <Content Include="Views\PROYECTO\CreateMiembro.cshtml" />
     <Content Include="Views\PROYECTO\_CreateOrEditMiembro.cshtml" />
     <Content Include="Views\Shared\_NewLayout.cshtml" />
+    <Content Include="Views\Home\VistaBurnDown.cshtml" />
+    <Content Include="Views\STAKEHOLDER\Create.cshtml" />
+    <Content Include="Views\STAKEHOLDER\Edit.cshtml" />
+    <Content Include="Views\STAKEHOLDER\Delete.cshtml" />
+    <Content Include="Views\STAKEHOLDER\Details.cshtml" />
+    <Content Include="Views\STAKEHOLDER\Index.cshtml" />
+    <Content Include="Views\STAKEHOLDER\_CreateOrEdit.cshtml" />
+    <Content Include="Views\SPRINT\Create.cshtml" />
+    <Content Include="Views\SPRINT\Edit.cshtml" />
+    <Content Include="Views\SPRINT\Delete.cshtml" />
+    <Content Include="Views\SPRINT\Details.cshtml" />
+    <Content Include="Views\SPRINT\Index.cshtml" />
+    <Content Include="Views\SPRINT\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

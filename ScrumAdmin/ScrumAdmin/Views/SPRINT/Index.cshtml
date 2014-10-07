@@ -1,0 +1,71 @@
+@model IEnumerable<ScrumAdmin.Models.SPRINT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            IDRELEASE
+        </th>
+        <th>
+            FECHA_INICIO
+        </th>
+        <th>
+            FECHA_FINAL
+        </th>
+        <th>
+            RELEASE
+        </th>
+        <th>
+            SPRINT_RETROSPECTIVE
+        </th>
+        <th>
+            SPRINT_REVIEW
+        </th>
+        <th>
+            USER_STORY
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+        <td>
+			@item.IDRELEASE
+        </td>
+        <td>
+			@String.Format("{0:g}", item.FECHA_INICIO)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.FECHA_FINAL)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.RELEASE).ToString()
+        </td>
+        <td>
+			@(item.SPRINT_RETROSPECTIVE == null ? "None" : item.SPRINT_RETROSPECTIVE.Count.ToString())
+        </td>
+        <td>
+			@(item.SPRINT_REVIEW == null ? "None" : item.SPRINT_REVIEW.Count.ToString())
+        </td>
+        <td>
+			@(item.USER_STORY == null ? "None" : item.USER_STORY.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

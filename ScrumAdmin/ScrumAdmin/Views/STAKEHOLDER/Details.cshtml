@@ -1,0 +1,59 @@
+@model ScrumAdmin.Models.STAKEHOLDER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>STAKEHOLDER</legend>
+
+    <div class="display-label">IDPODER</div>
+    <div class="display-field">@Model.IDPODER</div>
+
+    <div class="display-label">IDINTERES</div>
+    <div class="display-field">@Model.IDINTERES</div>
+
+    <div class="display-label">IDPROYECTO</div>
+    <div class="display-field">@Model.IDPROYECTO</div>
+
+    <div class="display-label">NOMBRE</div>
+    <div class="display-field">@Model.NOMBRE</div>
+
+    <div class="display-label">AP1</div>
+    <div class="display-field">@Model.AP1</div>
+
+    <div class="display-label">AP2</div>
+    <div class="display-field">@Model.AP2</div>
+
+    <div class="display-label">CELULAR</div>
+    <div class="display-field">@Model.CELULAR</div>
+
+    <div class="display-label">EMPRESA</div>
+    <div class="display-field">@Model.EMPRESA</div>
+
+    <div class="display-label">EMAIL</div>
+    <div class="display-field">@Model.EMAIL</div>
+
+    <div class="display-label">DIRECCION</div>
+    <div class="display-field">@Model.DIRECCION</div>
+
+    <div class="display-label">EXPECTATIVA</div>
+    <div class="display-field">@Model.EXPECTATIVA</div>
+
+    <div class="display-label">INTERES</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.INTERES).ToString()</div>
+
+    <div class="display-label">PODER</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.PODER).ToString()</div>
+
+    <div class="display-label">PROYECTO</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.PROYECTO).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

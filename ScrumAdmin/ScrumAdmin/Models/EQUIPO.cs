@@ -15,6 +15,7 @@ namespace ScrumAdmin.Models
     
     public partial class EQUIPO
     {
+
         public EQUIPO()
         {
             this.USER_STORY = new HashSet<USER_STORY>();

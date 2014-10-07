@@ -14,12 +14,12 @@ using ScrumAdmin.Models;
 namespace ScrumAdmin.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
 
-        public Entities db = new Entities();
-        SINGLETON singleton = SINGLETON.Create();
+        //public Entities db = new Entities();
+        //SINGLETON singleton = SINGLETON.Create();
 
         //
         // GET: /Account/Login
@@ -36,32 +36,44 @@ namespace ScrumAdmin.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(USUARIO model, string returnUrl)
+
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
-            USUARIO users = (from USUARIO p in db.USUARIO where (p.NICK == model.NICK) select p).FirstOrDefault();
-            if (users != null)
+            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                if (users.CONTRASENNIA == model.CONTRASENNIA)
-                {
-                   WebSecurity.Login(model.NICK, model.CONTRASENNIA, persistCookie: false);
-                   singleton.idUsuario = users.ID;
-                   return RedirectToAction("Index", "PROYECTO");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "La contraseña es incorrecta");
-                    return View(model);
-                }
+                return RedirectToLocal(returnUrl);
             }
-            else
-            {
-                ModelState.AddModelError("", "El usuario no existe");
-                return View(model);
-            }                        
+
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-           // ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
-            //return View(model);
+            ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
+            return View(model);
         }
+        //public ActionResult Login(USUARIO model, string returnUrl)
+        //{
+        //    USUARIO users = (from USUARIO p in db.USUARIO where (p.NICK == model.NICK) select p).FirstOrDefault();
+        //    if (users != null)
+        //    {
+        //        if (users.CONTRASENNIA == model.CONTRASENNIA)
+        //        {
+        //           WebSecurity.Login(model.NICK, model.CONTRASENNIA, persistCookie: false);
+        //           singleton.idUsuario = users.ID;
+        //           return RedirectToAction("Index", "PROYECTO");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "La contraseña es incorrecta");
+        //            return View(model);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ModelState.AddModelError("", "El usuario no existe");
+        //        return View(model);
+        //    }                        
+        //    // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
+        //   // ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
+        //    //return View(model);
+        //}
 
         //
         // POST: /Account/LogOff

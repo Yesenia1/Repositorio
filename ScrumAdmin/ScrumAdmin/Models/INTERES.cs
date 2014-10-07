@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class INTERES
     {
@@ -18,7 +19,8 @@ namespace ScrumAdmin.Models
         {
             this.STAKEHOLDER = new HashSet<STAKEHOLDER>();
         }
-    
+
+        [Key]
         public int ID { get; set; }
         public string NOMBRE { get; set; }
     

@@ -1,0 +1,38 @@
+@model ScrumAdmin.Models.SPRINT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SPRINT</legend>
+
+    <div class="display-label">IDRELEASE</div>
+    <div class="display-field">@Model.IDRELEASE</div>
+
+    <div class="display-label">FECHA_INICIO</div>
+    <div class="display-field">@String.Format("{0:g}", Model.FECHA_INICIO)</div>
+
+    <div class="display-label">FECHA_FINAL</div>
+    <div class="display-field">@String.Format("{0:g}", Model.FECHA_FINAL)</div>
+
+    <div class="display-label">RELEASE</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.RELEASE).ToString()</div>
+
+    <div class="display-label">SPRINT_RETROSPECTIVE</div>
+    <div class="display-field">@(Model.SPRINT_RETROSPECTIVE == null ? "None" : Model.SPRINT_RETROSPECTIVE.Count.ToString())</div>
+
+    <div class="display-label">SPRINT_REVIEW</div>
+    <div class="display-field">@(Model.SPRINT_REVIEW == null ? "None" : Model.SPRINT_REVIEW.Count.ToString())</div>
+
+    <div class="display-label">USER_STORY</div>
+    <div class="display-field">@(Model.USER_STORY == null ? "None" : Model.USER_STORY.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

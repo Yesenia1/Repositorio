@@ -11,9 +11,12 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class STAKEHOLDER
     {
+
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDPODER { get; set; }
         public Nullable<int> IDINTERES { get; set; }

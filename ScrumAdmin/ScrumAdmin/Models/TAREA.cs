@@ -15,6 +15,7 @@ namespace ScrumAdmin.Models
     
     public partial class TAREA
     {
+        [Key]
         public int ID { get; set; }
 
 

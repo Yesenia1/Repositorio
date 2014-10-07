@@ -11,9 +11,11 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class CRITERIOS_ACEPTACION
     {
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDPROYECTO { get; set; }
         public string DESCRIPCION { get; set; }

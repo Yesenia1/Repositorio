@@ -11,6 +11,7 @@ namespace ScrumAdmin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SPRINT
     {
@@ -20,7 +21,8 @@ namespace ScrumAdmin.Models
             this.SPRINT_REVIEW = new HashSet<SPRINT_REVIEW>();
             this.USER_STORY = new HashSet<USER_STORY>();
         }
-    
+
+        [Key]
         public int ID { get; set; }
         public Nullable<int> IDRELEASE { get; set; }
         public Nullable<System.DateTime> FECHA_INICIO { get; set; }
