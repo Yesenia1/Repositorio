@@ -22,7 +22,7 @@
         <EntityTypeShape EntityType="Model.SPRINT_RETROSPECTIVE" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.SPRINT_REVIEW" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.STAKEHOLDER" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TAREA" Width="1.5" PointX="12.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAREA" Width="1.5" PointX="12.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TIPO" Width="1.5" PointX="8.25" PointY="22.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.USER_STORY" Width="1.5" PointX="10.5" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />

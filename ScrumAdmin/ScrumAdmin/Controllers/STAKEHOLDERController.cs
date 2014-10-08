@@ -6,7 +6,8 @@ using System.Web.Mvc;
 using ScrumAdmin.Models;
 
 namespace ScrumAdmin.Controllers
-{   
+{
+    [Authorize]
     public class STAKEHOLDERController : Controller
     {
 		private readonly ISTAKEHOLDERRepository stakeholderRepository;
